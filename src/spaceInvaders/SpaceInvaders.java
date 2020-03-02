@@ -13,7 +13,7 @@ public class SpaceInvaders extends JFrame {
 
     private void initGame() {
         add(new PlayArea());
-        setSize(new Dimension(500, 400));
+        pack();
         setTitle("SpaceInvaders");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
