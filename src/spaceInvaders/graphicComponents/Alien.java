@@ -8,7 +8,7 @@ public class Alien extends MovingObject {
     private Bomb bomb;
 
     public Alien(int x, int y) {
-        setImage(new ImageIcon("images/Ghost.png"));
+        setImage(new ImageIcon("images/Alien.png"));
         setX(x);
         setY(y);
         setWidthAndHeight(Commons.ALIEN_WIDTH, Commons.ALIEN_HEIGHT);
