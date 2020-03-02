@@ -9,6 +9,7 @@ public class SpaceInvaders extends JFrame {
     private StartScreen startScreen;
     private PlayArea gameScreen;
     private HighScoreScreen highScoreScreen;
+    private Driver driver;
     private JPanel mainPanel;
     private CardLayout cl;
 
@@ -20,9 +21,10 @@ public class SpaceInvaders extends JFrame {
         mainPanel = new JPanel();
         cl = new CardLayout();
         mainPanel.setLayout(cl);
+        driver = new Driver();
         startScreen = new StartScreen(this);
         gameScreen = new PlayArea(this);
-        highScoreScreen = new HighScoreScreen(this);
+        highScoreScreen = new HighScoreScreen(this, driver.getScores());
         mainPanel.add(startScreen, "StartScreen");
         mainPanel.add(gameScreen, "GameScreen");
         mainPanel.add(highScoreScreen, "HighScoreScreen");

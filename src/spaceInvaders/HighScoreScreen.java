@@ -13,9 +13,10 @@ public class HighScoreScreen extends JPanel {
     private Font headerFont;
     private JLabel[] highScores;
 
-    public HighScoreScreen(SpaceInvaders mainFrame) {
+    public HighScoreScreen(SpaceInvaders mainFrame, String[] scores) {
         this.mainFrame = mainFrame;
         initScreen();
+        initScores(scores);
     }
 
     private void initScreen() {
@@ -35,14 +36,14 @@ public class HighScoreScreen extends JPanel {
         add(highScoreLabel);
         add(headersLabel);
         highScores = new JLabel[10];
-        initScores();
     }
 
-    private void initScores() {
+    private void initScores(String[] scores) {
         for(int i = 0; i < highScores.length; i++) {
-            JLabel label = new JLabel("AAA   000");
+            JLabel label = new JLabel(scores[i]);
             highScores[i] = label;
             add(label);
+            label.setForeground(Color.WHITE);
             label.setHorizontalAlignment(JLabel.CENTER);
         }
     }
