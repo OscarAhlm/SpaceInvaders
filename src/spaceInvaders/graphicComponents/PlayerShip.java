@@ -8,8 +8,6 @@ import java.awt.event.KeyEvent;
 import java.security.Key;
 
 public class PlayerShip extends MovingObject{
-//   private int x;
-//   private int y;
    private int dx;
    private ImageIcon image;
 

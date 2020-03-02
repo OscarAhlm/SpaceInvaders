@@ -1,6 +1,7 @@
 package spaceInvaders.graphicComponents;
 
 import spaceInvaders.Commons;
+import spaceInvaders.SpaceInvaders;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Random;
 
 public class PlayArea extends JPanel {
+    private SpaceInvaders mainFrame;
     private PlayerShip playerShip;
     private List<Alien> aliens;
     private Shot shot;
@@ -25,11 +27,12 @@ public class PlayArea extends JPanel {
     private boolean gameOver = false;
     private Random bombGenerator;
 
-    public PlayArea() {
+    public PlayArea(SpaceInvaders mainFrame) {
+        this.mainFrame = mainFrame;
         initPlayArea();
     }
 
-    public void initPlayArea() {
+    private void initPlayArea() {
         setPreferredSize(new Dimension(Commons.BOARD_WIDTH, Commons.BOARD_HEIGHT));
         setBackground(Color.BLACK);
         setFocusable(true);
@@ -212,6 +215,10 @@ public class PlayArea extends JPanel {
             playerShip.keyPressed(e);
 
             int key = e.getKeyCode();
+
+            if(key == KeyEvent.VK_ESCAPE) {
+                mainFrame.homeScreen();
+            }
 
             if(key == KeyEvent.VK_SPACE) {
                 if(gameOver) {
