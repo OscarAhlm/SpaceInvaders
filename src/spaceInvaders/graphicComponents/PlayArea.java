@@ -223,6 +223,7 @@ public class PlayArea extends JPanel {
             if(key == KeyEvent.VK_SPACE) {
                 if(gameOver) {
                     score = 0;
+                    aliensKilled = 0;
                     initPlayArea();
                     gameOver = false;
                 }
