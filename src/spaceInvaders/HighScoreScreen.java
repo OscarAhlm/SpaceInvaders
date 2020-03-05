@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class HighScoreScreen extends JPanel {
     private SpaceInvaders mainFrame;
@@ -13,10 +14,10 @@ public class HighScoreScreen extends JPanel {
     private Font headerFont;
     private JLabel[] highScores;
 
-    public HighScoreScreen(SpaceInvaders mainFrame, String[] scores) {
+    public HighScoreScreen(SpaceInvaders mainFrame, String[] names, String[] scores) {
         this.mainFrame = mainFrame;
         initScreen();
-        initScores(scores);
+        initScores(names, scores);
     }
 
     private void initScreen() {
@@ -38,13 +39,19 @@ public class HighScoreScreen extends JPanel {
         highScores = new JLabel[10];
     }
 
-    private void initScores(String[] scores) {
+    private void initScores(String[] names, String[] scores) {
         for(int i = 0; i < highScores.length; i++) {
-            JLabel label = new JLabel(scores[i]);
+            JLabel label = new JLabel(names[i] + "   " + scores[i]);
             highScores[i] = label;
             add(label);
             label.setForeground(Color.WHITE);
             label.setHorizontalAlignment(JLabel.CENTER);
+        }
+    }
+
+    public void updateScores(String[] names, String[] scores) {
+        for(int i = 0; i < highScores.length; i++) {
+            highScores[i].setText(names[i] + "   " + scores[i]);
         }
     }
 

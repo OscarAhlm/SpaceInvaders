@@ -190,9 +190,13 @@ public class PlayArea extends JPanel {
 
     private void gameOver() {
         playerShip.setImage(new ImageIcon("images/ShipExplosion.png"));
+        repaint();
         gameOver = true;
-        highScore = score;
+        if(score > highScore) {
+            highScore = score;
+        }
         timer.stop();
+        mainFrame.checkForNewHighScore(score);
     }
 
     private void doGameCycle() {
