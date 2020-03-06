@@ -1,6 +1,6 @@
 package spaceInvaders;
 
-import spaceInvaders.graphicComponents.PlayArea;
+
 
 import javax.swing.*;
 import java.awt.*;

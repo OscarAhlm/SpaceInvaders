@@ -1,7 +1,9 @@
-package spaceInvaders.graphicComponents;
+package spaceInvaders;
 
-import spaceInvaders.Commons;
-import spaceInvaders.SpaceInvaders;
+import spaceInvaders.graphicComponents.Alien;
+import spaceInvaders.graphicComponents.Bomb;
+import spaceInvaders.graphicComponents.PlayerShip;
+import spaceInvaders.graphicComponents.Shot;
 
 import javax.swing.*;
 import java.awt.*;
