@@ -12,7 +12,7 @@ public class Driver {
     private int index;
     public Driver() {
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/spaceinvaders?useLegacyDatetimeCode=false&serverTimezone=UTC", user, password);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/spaceinvader?useLegacyDatetimeCode=false&serverTimezone=UTC", user, password);
 
         } catch(SQLException e) {
             e.printStackTrace();

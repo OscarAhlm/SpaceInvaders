@@ -58,18 +58,20 @@ public class SpaceInvaders extends JFrame {
 
     public void checkForNewHighScore(int score) {
         String name;
-        try {
-            if(score > Integer.parseInt(scores[9])) {
-                name = JOptionPane.showInputDialog("You just set a new high score. Enter your name for eternal glory!", null);
-                if(name.length() != 3) {
+//        try {
+        if(score > Integer.parseInt(scores[9])) {
+            name = JOptionPane.showInputDialog("You just set a new high score. Enter your name for eternal glory!", null);
+            if(name.length() != 3) {
+                do {
                     name = JOptionPane.showInputDialog("A true legend has three characters in his name, try again!", null);
-                }
-                driver.setNewScore("" + name, String.format("%03d", score));
-                highScoreScreen.updateScores(driver.getNames(), driver.getScores());
+                }while(name.length() != 3);
             }
-        } catch(NullPointerException e) {
-            name = JOptionPane.showInputDialog("A true legend has three characters in his name, try again!", null);
+            driver.setNewScore("" + name, String.format("%03d", score));
+            highScoreScreen.updateScores(driver.getNames(), driver.getScores());
         }
+//        } catch(NullPointerException e) {
+//            name = JOptionPane.showInputDialog("A true legend has three characters in his name, try again!", null);
+//        }
     }
 
     public static void main(String[] args) {
